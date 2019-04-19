@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
+	<info organisation="com.wavesplatform"
+		module="benchmark"
+		revision="5f42f519a9cd92e6f9c094810963c67180fd5b01-DIRTY"
+		status="integration"
+		publication="20190201204121"
+	>
+		<description>
+		benchmark
+		</description>
+	</info>
+	<configurations>
+		<conf name="compile" visibility="public" description=""/>
+		<conf name="runtime" visibility="public" description="" extends="compile"/>
+		<conf name="test" visibility="public" description="" extends="runtime"/>
+		<conf name="provided" visibility="public" description=""/>
+		<conf name="optional" visibility="public" description=""/>
+		<conf name="jmh" visibility="public" description="" extends="test"/>
+		<conf name="compile-internal" visibility="private" description="" extends="compile,optional,provided"/>
+		<conf name="runtime-internal" visibility="private" description="" extends="runtime,optional"/>
+		<conf name="test-internal" visibility="private" description="" extends="test,optional,provided"/>
+		<conf name="plugin" visibility="private" description=""/>
+		<conf name="pom" visibility="public" description=""/>
+		<conf name="scala-tool" visibility="private" description=""/>
+		<conf name="scalafmt" visibility="private" description=""/>
+		<conf name="scoveragePlugin" visibility="private" description=""/>
+	</configurations>
+	<publications>
+		<artifact name="benchmark" type="pom" ext="pom" conf="pom"/>
+		<artifact name="benchmark" type="jar" ext="jar" conf="compile"/>
+		<artifact name="benchmark" type="src" ext="jar" conf="compile" e:classifier="sources"/>
+		<artifact name="benchmark" type="doc" ext="jar" conf="compile" e:classifier="javadoc"/>
+	</publications>
+	<dependencies>
+		<dependency org="org.scala-lang" name="scala-compiler" rev="2.12.7" conf="scala-tool->default,optional(default)"/>
+		<dependency org="org.scala-lang" name="scala-library" rev="2.12.7" conf="scala-tool->default,optional(default);compile->default(compile)"/>
+		<dependency org="com.wavesplatform" name="FLG" rev="5f42f519a9cd92e6f9c094810963c67180fd5b01-DIRTY" conf="compile->compile;test->test"/>
+		<dependency org="com.wavesplatform" name="lang" rev="1.0.0" conf="compile->compile;test->test"/>
+		<dependency org="pl.project13.scala" name="sbt-jmh-extras" rev="0.3.3" conf="compile->default(compile)"/>
+		<dependency org="org.openjdk.jmh" name="jmh-core" rev="1.20" conf="compile->default(compile)"/>
+		<dependency org="org.openjdk.jmh" name="jmh-generator-bytecode" rev="1.20" conf="compile->default(compile)"/>
+		<dependency org="org.openjdk.jmh" name="jmh-generator-reflection" rev="1.20" conf="compile->default(compile)"/>
+		<dependency org="com.geirsson" name="scalafmt-core_2.12" rev="1.3.0" conf="scalafmt->default(compile)"/>
+		<dependency org="com.lucidchart" name="scalafmt-impl_2.12" rev="1.15-1.0" conf="scalafmt->default(compile)"/>
+	</dependencies>
+</ivy-module>

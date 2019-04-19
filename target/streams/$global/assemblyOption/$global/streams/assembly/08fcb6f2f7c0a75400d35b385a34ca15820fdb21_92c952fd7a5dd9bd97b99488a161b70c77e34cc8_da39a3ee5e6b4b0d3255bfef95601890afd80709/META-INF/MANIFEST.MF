@@ -1,0 +1,32 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1537368285991
+Build-Jdk: 1.8.0_144
+Built-By: ron.ratovsky
+Bundle-Description: Sonatype helps open source projects to set up Mave
+ n repositories on https://oss.sonatype.org/
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
+Bundle-ManifestVersion: 2
+Bundle-Name: swagger-integration
+Bundle-SymbolicName: io.swagger.core.v3.swagger-integration
+Bundle-Version: 2.0.5
+Created-By: Apache Maven Bundle Plugin
+Export-Package: io.swagger.v3.oas.integration;version="2.0.5";uses:="i
+ o.swagger.v3.oas.integration.api,io.swagger.v3.oas.models,org.apache.
+ commons.lang3.tuple,org.slf4j",io.swagger.v3.oas.integration.api;vers
+ ion="2.0.5";uses:="io.swagger.v3.oas.integration,io.swagger.v3.oas.mo
+ dels"
+implementation-version: 2.0.5
+Import-Package: com.fasterxml.jackson.databind;version="[2.9,3)",io.sw
+ agger.v3.core.util;version="[2.0,3)",io.swagger.v3.oas.annotations;ve
+ rsion="[2.0,3)",io.swagger.v3.oas.integration;version="[2.0,3)",io.sw
+ agger.v3.oas.integration.api;version="[2.0,3)",io.swagger.v3.oas.mode
+ ls;version="[2.0,3)",org.apache.commons.lang3;version="[3.7,4)",org.a
+ pache.commons.lang3.tuple;version="[3.7,4)",org.reflections;version="
+ [0.9,1)",org.reflections.scanners;version="[0.9,1)",org.reflections.u
+ til;version="[0.9,1)",org.slf4j;version="[1.7,2)"
+mode: development
+package: io.swagger
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Tool: Bnd-3.5.0.201709291849
+url: https://github.com/swagger-api/swagger-core/modules/swagger-integ
+ ration

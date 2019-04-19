@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1478087996794
+Bundle-ManifestVersion: 2
+Bundle-Name: org.scodec.bits
+Bundle-SymbolicName: org.scodec.bits
+Bundle-Version: 1.1.2
+Created-By: 1.8.0_102 (Oracle Corporation)
+Export-Package: scodec.bits;version="1.1.2";uses:="javax.crypto,scala,sc
+ ala.collection,scala.collection.generic,scala.collection.immutable,scal
+ a.collection.mutable,scala.collection.parallel,scala.math,scala.reflect
+ ,scala.reflect.api,scala.reflect.macros.whitebox,scala.runtime,scala.ut
+ il"
+Import-Package: scala;version="[2.12,2.13)",scala.collection;version="[2
+ .12,2.13)",scala.collection.generic;version="[2.12,2.13)",scala.collect
+ ion.immutable;version="[2.12,2.13)",scala.collection.mutable;version="[
+ 2.12,2.13)",scala.collection.parallel;version="[2.12,2.13)",scala.math;
+ version="[2.12,2.13)",scala.reflect;version="[2.12,2.13)",scala.reflect
+ .api;version="[2.12,2.13)",scala.reflect.macros;version="[2.12,2.13)",s
+ cala.reflect.macros.whitebox;version="[2.12,2.13)",scala.runtime;versio
+ n="[2.12,2.13)",scala.runtime.java8;version="[2.12,2.13)",scala.util;ve
+ rsion="[2.12,2.13)",scala.util.hashing;version="[2.12,2.13)",javax.cryp
+ to
+Tool: Bnd-2.1.0.20130426-122213

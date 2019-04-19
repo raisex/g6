@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: Cats MTL core
+Implementation-Version: 0.3.0
+Specification-Vendor: org.typelevel
+Specification-Title: Cats MTL core
+Implementation-Vendor-Id: org.typelevel
+Specification-Version: 0.3.0
+Implementation-URL: https://github.com/edmundnoble/cats-mtl
+Implementation-Vendor: org.typelevel
+

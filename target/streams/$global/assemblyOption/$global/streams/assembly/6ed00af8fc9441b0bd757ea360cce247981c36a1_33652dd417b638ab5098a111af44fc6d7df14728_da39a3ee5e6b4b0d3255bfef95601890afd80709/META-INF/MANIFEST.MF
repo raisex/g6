@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: kamon-system-metrics
+Implementation-Version: 1.0.0
+Specification-Vendor: io.kamon
+Specification-Title: kamon-system-metrics
+Implementation-Vendor-Id: io.kamon
+Specification-Version: 1.0.0
+Vcs-Release-Tag: v1.0.0
+Implementation-Vendor: io.kamon
+Vcs-Release-Hash: 7f52c662303919a08934d8f2a1bbf332e6ba0cc4
+

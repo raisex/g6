@@ -1,0 +1,2 @@
+io.swagger.scala.converter.SwaggerScalaModelConverter
+com.github.swagger.akka.SwaggerScalaModelConverter

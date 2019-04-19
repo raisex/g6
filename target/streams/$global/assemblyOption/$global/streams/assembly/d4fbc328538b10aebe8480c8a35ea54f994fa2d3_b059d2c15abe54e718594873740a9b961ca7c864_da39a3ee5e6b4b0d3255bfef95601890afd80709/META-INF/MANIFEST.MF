@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: fastparse-cats-core
+Implementation-Version: 0.1.0
+Specification-Vendor: org.bykn
+Specification-Title: fastparse-cats-core
+Implementation-Vendor-Id: org.bykn
+Specification-Version: 0.1.0
+Implementation-Vendor: org.bykn
+

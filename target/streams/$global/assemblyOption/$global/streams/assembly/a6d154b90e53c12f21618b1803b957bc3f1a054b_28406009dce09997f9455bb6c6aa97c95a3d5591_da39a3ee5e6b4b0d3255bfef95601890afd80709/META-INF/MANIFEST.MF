@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: supertagged
+Implementation-Version: 1.4
+Specification-Vendor: org.rudogma
+Specification-Title: supertagged
+Implementation-Vendor-Id: org.rudogma
+Specification-Version: 1.4
+Implementation-URL: https://github.com/Rudogma/scala-supertagged
+Implementation-Vendor: org.rudogma
+

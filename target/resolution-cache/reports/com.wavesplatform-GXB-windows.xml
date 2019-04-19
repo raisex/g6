@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="com.wavesplatform"
+		module="FLG"
+		revision="5f42f519a9cd92e6f9c094810963c67180fd5b01-DIRTY"
+		conf="windows"
+		confs="compile, runtime, test, provided, optional, universal, universal-docs, universal-src, windows, linux, docker, debian, rpm, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool, scalafmt, scoveragePlugin"
+		date="20190214213120"/>
+	<dependencies>
+	</dependencies>
+</ivy-report>

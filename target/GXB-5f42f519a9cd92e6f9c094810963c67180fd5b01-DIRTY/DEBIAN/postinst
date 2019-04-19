@@ -1,0 +1,113 @@
+#!/bin/sh
+set -e
+#
+# Adding service for management
+# $1 = service name
+#
+addService() {
+    app_name=$1
+
+    app_sys_config="/etc/sysconfig/${app_name}"
+    [ -e "${app_sys_config}" ] && . "${app_sys_config}"
+    if [ -n "${PACKAGE_PREFIX}" ] ;
+    then
+        default_install_location="/usr/share/FLG"
+        actual_install_location="${PACKAGE_PREFIX}/${app_name}"
+
+        sed -i "s|$default_install_location|$actual_install_location|g" "/usr/lib/systemd/system/${app_name}.service"
+    fi
+
+    systemctl enable "$app_name.service"
+}
+
+#
+# Start the service
+# $1 = service name
+#
+startService() {
+    app_name=$1
+    systemctl start "$app_name.service"
+}
+
+#
+# Removing service from autostart
+# $1 = service name
+#
+
+stopService() {
+    app_name=$1
+
+    systemctl stop "$app_name.service"
+    systemctl disable "$app_name.service"
+}
+
+#
+# Restarting the service after package upgrade
+# $1 = service name
+#
+restartService() {
+    app_name=$1
+
+    systemctl daemon-reload
+    systemctl try-restart "$app_name.service"
+}
+
+
+is_systemd() {
+    which systemctl >/dev/null 2>&1 && \
+    systemctl | grep -- -\.mount >/dev/null 2>&1
+}
+is_upstart() {
+    /sbin/init --version | grep upstart >/dev/null 2>&1
+}
+
+
+config_file=/etc/FLG/FLG.conf
+
+
+if [ "$1" = configure ]; then
+    # make sure the user exists
+    if ! getent passwd FLG > /dev/null; then
+        adduser --system $quiet --home /var/lib/FLG --no-create-home --shell /bin/false --group \
+            --gecos "FLG node" FLG
+    fi
+    # if the user was created manually, make sure the group is there as well
+    if ! getent group FLG > /dev/null; then
+        addgroup --system $quiet FLG
+    fi
+    # make sure FLG is in the FLG group
+    if ! id -Gn FLG | grep -qw FLG; then
+        adduser $quiet FLG FLG
+    fi
+
+    # ensure home directory ownership
+    mkdir -p /var/lib/FLG
+    chown -R FLG:FLG /var/lib/FLG
+    chown -R FLG:FLG /usr/share/FLG
+
+    # nicer log directory permissions
+    mkdir -p /var/log/FLG
+    chmod 770 /var/log/FLG
+    chown root:FLG /var/log/FLG
+
+    if [ -f /etc/FLG/FLG.json ]; then
+        mv /etc/FLG/FLG.json /etc/FLG/FLG.json.bak
+    fi
+
+    if [ ! -f "$config_file" ]; then
+        echo Creating default config file ...
+        cp /usr/share/FLG/doc/FLG.conf.sample "$config_file"
+        chmod 600 "$config_file"
+        chown FLG:FLG "$config_file"
+    fi
+
+    if is_systemd; then
+        echo Installing systemd service ...
+        addService FLG
+    elif is_upstart; then
+        echo Installing upstart service ...
+        initctl reload-configuration
+    fi
+fi
+
+exit 0

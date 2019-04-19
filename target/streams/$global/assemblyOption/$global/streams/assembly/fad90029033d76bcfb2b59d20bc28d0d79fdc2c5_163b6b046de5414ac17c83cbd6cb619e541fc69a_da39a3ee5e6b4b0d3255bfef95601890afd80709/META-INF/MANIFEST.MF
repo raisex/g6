@@ -1,0 +1,35 @@
+Manifest-Version: 1.0
+Export-Package: net.logstash.logback.encoder;uses:="ch.qos.logback.acc
+ ess.spi";version="4.11.0",net.logstash.logback.appender;uses:="javax.
+ net,javax.net.ssl,net.logstash.logback.encoder";version="4.11.0"
+Ignore-Package: ch.qos.logback.core.status,ch.qos.logback.core.spi,com
+ .lmax.disruptor,ch.qos.logback.core.pattern,ch.qos.logback.classic,ch
+ .qos.logback.core,ch.qos.logback.classic.pattern,ch.qos.logback.core.
+ joran.spi,ch.qos.logback.core.encoder,org.slf4j,org.apache.commons.la
+ ng,org.apache.commons.lang.time,com.lmax.disruptor.dsl,ch.qos.logback
+ .core.net.ssl,ch.qos.logback.core.net,ch.qos.logback.core.boolex,ch.q
+ os.logback.core.util,ch.qos.logback.classic.spi
+Built-By: pclay
+Tool: Bnd-1.50.0
+Bundle-Name: Logstash Logback Encoder
+Created-By: Apache Maven Bundle Plugin
+Fragment-Host: ch.qos.logback.classic
+Build-Jdk: 1.7.0_65
+Bundle-Version: 4.11.0
+Bnd-LastModified: 1498332748031
+Bundle-ManifestVersion: 2
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0, http://www
+ .slf4j.org/license.html
+Bundle-Description: Logback encoder which will output events as Logsta
+ sh-compatible JSON
+Bundle-SymbolicName: net.logstash.logback.logstash-logback-encoder
+Import-Package: ch.qos.logback.access;version="[1.2,2)";resolution:=op
+ tional,ch.qos.logback.access.spi;version="[1.2,2)";resolution:=option
+ al,com.fasterxml.jackson.core;version="[2.8,3)",com.fasterxml.jackson
+ .core.io;version="[2.8,3)",com.fasterxml.jackson.core.util;version="[
+ 2.8,3)",com.fasterxml.jackson.databind;version="[2.8,3)",com.fasterxm
+ l.jackson.databind.ser;version="[2.8,3)",com.fasterxml.jackson.databi
+ nd.util;version="[2.8,3)",com.fasterxml.uuid;version="[3.1,4)",com.fa
+ sterxml.uuid.impl;version="[3.1,4)",javax.net,javax.net.ssl
+Archiver-Version: Plexus Archiver
+

@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: kamon-executors
+Implementation-Version: 1.0.1
+Specification-Vendor: io.kamon
+Specification-Title: kamon-executors
+Implementation-Vendor-Id: io.kamon
+Specification-Version: 1.0.1
+Vcs-Release-Tag: v1.0.1
+Implementation-Vendor: io.kamon
+Vcs-Release-Hash: c9736a5dc56fe8b62318d25d5e093cc22bd2d8bd
+

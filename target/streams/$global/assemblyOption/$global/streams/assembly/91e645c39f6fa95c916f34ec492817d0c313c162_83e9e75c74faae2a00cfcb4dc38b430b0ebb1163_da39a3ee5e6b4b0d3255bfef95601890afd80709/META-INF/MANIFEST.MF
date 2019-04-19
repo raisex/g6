@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Implementation-Title: ficus
+Implementation-Version: 1.4.2
+Specification-Vendor: com.iheart
+Specification-Title: ficus
+Implementation-Vendor-Id: com.iheart
+Specification-Version: 1.4.2
+Implementation-URL: http://iheartradio.github.io/ficus
+Vcs-Release-Tag: v1.4.2
+Implementation-Vendor: com.iheart
+Vcs-Release-Hash: 48331b0e31a0042c5a648499c05900b55b0033d0
+

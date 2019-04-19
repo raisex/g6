@@ -1,0 +1,23 @@
+#!/bin/sh
+set -e
+is_systemd() {
+    which systemctl >/dev/null 2>&1 && \
+    systemctl | grep -- -\.mount >/dev/null 2>&1
+}
+is_upstart() {
+    /sbin/init --version | grep upstart >/dev/null 2>&1
+}
+
+
+if [ "$1" = purge ]; then
+    rm -rf /var/lib/FLG/matcher/journal
+    rm -rf /var/lib/FLG/matcher/snapshots
+    rm -rf /var/lib/FLG/matcher/orderhistory.dat
+    rm -rf /var/lib/FLG/data
+    rm -rf /var/log/FLG
+
+    userdel FLG >/dev/null 2>&1 || true
+    groupdel FLG >/dev/null 2>&1 || true
+fi
+
+exit 0

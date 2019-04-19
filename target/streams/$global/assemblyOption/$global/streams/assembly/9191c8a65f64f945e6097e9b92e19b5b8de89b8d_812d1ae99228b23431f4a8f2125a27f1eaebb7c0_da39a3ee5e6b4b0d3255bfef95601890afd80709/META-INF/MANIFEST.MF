@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: core
+Implementation-Version: 1.1.3
+Specification-Vendor: io.kamon
+Specification-Title: core
+Implementation-Vendor-Id: io.kamon
+Specification-Version: 1.1.3
+Implementation-Vendor: io.kamon
+

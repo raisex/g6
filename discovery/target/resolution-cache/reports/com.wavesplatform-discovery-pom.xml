@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="com.wavesplatform"
+		module="discovery"
+		revision="5f42f519a9cd92e6f9c094810963c67180fd5b01-DIRTY"
+		conf="pom"
+		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool, scalafmt, scoveragePlugin"
+		date="20190201204057"/>
+	<dependencies>
+	</dependencies>
+</ivy-report>

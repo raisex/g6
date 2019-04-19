@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: kamon-scala-future
+Implementation-Version: 1.0.0
+Specification-Vendor: io.kamon
+Specification-Title: kamon-scala-future
+Implementation-Vendor-Id: io.kamon
+Specification-Version: 1.0.0
+Implementation-Vendor: io.kamon
+

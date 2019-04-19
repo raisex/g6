@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1478088560484
+Bundle-ManifestVersion: 2
+Bundle-Name: org.scodec.core
+Bundle-SymbolicName: org.scodec.core
+Bundle-Version: 1.10.3
+Created-By: 1.8.0_102 (Oracle Corporation)
+Export-Package: scodec;version="1.10.3";uses:="scala,scala.collection,sc
+ ala.collection.generic,scala.collection.immutable,scala.collection.muta
+ ble,scala.reflect,scala.runtime,scala.util,scodec.bits,scodec.codecs,sh
+ apeless,shapeless.ops,shapeless.ops.record",scodec.codecs;version="1.10
+ .3";uses:="javax.crypto,scala,scala.collection,scala.collection.generic
+ ,scala.collection.immutable,scala.collection.mutable,scala.math,scala.r
+ eflect,scala.runtime,scala.util,scodec,scodec.bits,shapeless,shapeless.
+ ops,shapeless.ops.record"
+Import-Package: scodec.bits;version="[1.1,1.2)",scala;version="[2.12,2.1
+ 3)",scala.collection;version="[2.12,2.13)",scala.collection.generic;ver
+ sion="[2.12,2.13)",scala.collection.immutable;version="[2.12,2.13)",sca
+ la.collection.mutable;version="[2.12,2.13)",scala.math;version="[2.12,2
+ .13)",scala.reflect;version="[2.12,2.13)",scala.runtime;version="[2.12,
+ 2.13)",scala.runtime.java8;version="[2.12,2.13)",scala.sys;version="[2.
+ 12,2.13)",scala.util;version="[2.12,2.13)",shapeless;version="[2.3,2.4)
+ ",shapeless.ops;version="[2.3,2.4)",shapeless.ops.record;version="[2.3,
+ 2.4)",shapeless.syntax;version="[2.3,2.4)",javax.crypto
+Tool: Bnd-2.1.0.20130426-122213

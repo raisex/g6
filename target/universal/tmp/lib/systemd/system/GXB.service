@@ -1,0 +1,21 @@
+[Unit]
+Description=FLG node
+Requires=network.target
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/default/FLG
+ExecStart=/usr/share/FLG/bin/FLG \
+  -Dlogback.file.directory=/var/log/FLG \
+  -Dlogback.pattern="%%-5level %%logger{26} - %%msg%%n" \
+  -- /etc/FLG/FLG.conf
+Restart=always
+RestartSec=60
+RestartPreventExitStatus=38 61
+SuccessExitStatus=143
+User=FLG
+PermissionsStartOnly=true
+TimeoutStopSec=300
+
+[Install]
+WantedBy=multi-user.target

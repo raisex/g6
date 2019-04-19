@@ -1,0 +1,120 @@
+#!/bin/sh
+set -e
+#
+# Adding service for management
+# $1 = service name
+#
+addService() {
+    app_name=$1
+
+    app_sys_config="/etc/sysconfig/${app_name}"
+    [ -e "${app_sys_config}" ] && . "${app_sys_config}"
+    if [ -n "${PACKAGE_PREFIX}" ] ;
+    then
+        default_install_location="${{chdir}}"
+        actual_install_location="${PACKAGE_PREFIX}/${app_name}"
+
+        sed -i "s|$default_install_location|$actual_install_location|g" "/usr/lib/systemd/system/${app_name}.service"
+    fi
+
+    systemctl enable "$app_name.service"
+}
+
+#
+# Start the service
+# $1 = service name
+#
+startService() {
+    app_name=$1
+    systemctl start "$app_name.service"
+}
+
+#
+# Removing service from autostart
+# $1 = service name
+#
+
+stopService() {
+    app_name=$1
+
+    systemctl stop "$app_name.service"
+    systemctl disable "$app_name.service"
+}
+
+#
+# Restarting the service after package upgrade
+# $1 = service name
+#
+restartService() {
+    app_name=$1
+
+    systemctl daemon-reload
+    systemctl try-restart "$app_name.service"
+}
+
+
+
+if [ "$1" = upgrade ]; then
+    if dpkg --compare-versions "$2" lt 0.7.5 ; then
+        # change home directory and remove legacy data files
+        rm -f /home/FLG/FLG/data/blockchain.dat
+        rm -f /home/FLG/FLG/data/peers.dat
+
+        # delete legacy configuration files
+        for file_to_remove in application.conf application-dev.conf logback-to-file.xml logback.xml reference.conf logback-overrides.xml
+        do
+            rm -f /usr/share/FLG/conf/$file_to_remove
+        done
+
+        rm -fr /usr/share/FLG/conf/target
+
+        chmod -s -x /usr/share/FLG/conf/* || true
+
+        # move wallet file to a new default location
+        if [ -f /home/FLG/FLG/wallet/wallet.s.dat ]; then
+            echo Moving wallet file to a new default location ...
+            mkdir -p /var/lib/FLG/wallet/
+            mv /home/FLG/FLG/wallet/wallet.s.dat /var/lib/FLG/wallet/wallet.dat
+        fi
+
+        if [ -f /etc/FLG.conf ]; then
+            echo Moving node configuration file from /etc/FLG.conf to /etc/FLG/FLG.conf ...
+            mv /etc/FLG.conf /etc/FLG/FLG.conf || true
+        fi
+
+        # if config file has not been manually altered, just remove FLG.directory and wallet.file keys
+        sed -i.bak '/directory\s*=\s*"\?\/home\/FLG\/FLG"\?\|file\s*=\s*"\?\/home\/FLG\/FLG\/wallet\/wallet\.s\.dat/d' /etc/FLG/FLG.conf
+
+        if [ -d /home/FLG/FLG/data ]; then
+            echo Moving data files ...
+
+            mv /home/FLG/FLG/data /var/lib/FLG/data || true
+            mv /home/FLG/FLG/journal /var/lib/FLG/journal || true
+            mv /home/FLG/FLG/snapshots /var/lib/FLG/snapshots || true
+        fi
+
+        if [ -f /etc/FLG.json ]; then
+            echo Moving legacy configuration file to a new location ...
+            cp /etc/FLG.json /etc/FLG/FLG.json
+            chmod -x /etc/FLG/FLG.json
+        fi
+
+        rm -f /etc/FLG.json
+        rm -f /usr/share/FLG/settings.json
+    fi
+
+    if dpkg --compare-versions "$2" le 0.8.7 && [ -f /etc/FLG/FLG.conf ] ; then
+        echo Backing up local configuration file ...
+        mv /etc/FLG/FLG.conf /etc/FLG/FLG.conf.bak
+    fi
+
+    if dpkg --compare-versions "$2" lt 0.8.11 ; then
+        rm -f /etc/FLG/upstart.conf
+        if [ -L /etc/init/FLG.conf ] ; then
+            rm -f /etc/init/FLG.conf
+        fi
+        chmod -x /etc/FLG/application.ini
+    fi
+fi
+
+exit 0

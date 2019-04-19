@@ -1,0 +1,34 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1527174052330
+Build-Jdk: 1.8.0_144
+Built-By: ron.ratovsky
+Bundle-Description: Sonatype helps open source projects to set up Mave
+ n repositories on https://oss.sonatype.org/
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
+Bundle-ManifestVersion: 2
+Bundle-Name: swagger-models
+Bundle-SymbolicName: io.swagger.models
+Bundle-Version: 1.5.20
+Created-By: Apache Maven Bundle Plugin
+Export-Package: io.swagger.models.auth;version="1.5.20";uses:="com.fas
+ terxml.jackson.annotation",io.swagger.models.parameters;version="1.5.
+ 20";uses:="com.fasterxml.jackson.annotation,io.swagger.models,io.swag
+ ger.models.properties,io.swagger.models.refs",io.swagger.models.prope
+ rties;version="1.5.20";uses:="com.fasterxml.jackson.annotation,io.swa
+ gger.models,io.swagger.models.refs",io.swagger.models.refs;version="1
+ .5.20",io.swagger.models;version="1.5.20";uses:="com.fasterxml.jackso
+ n.annotation,io.swagger.models.auth,io.swagger.models.parameters,io.s
+ wagger.models.properties,io.swagger.models.refs,javax.xml.bind.annota
+ tion"
+implementation-version: 1.5.20
+Import-Package: com.fasterxml.jackson.annotation;version="[2.9,3)",io.
+ swagger.models.auth;version="[1.5,2)",io.swagger.models.parameters;ve
+ rsion="[1.5,2)",io.swagger.models.properties;version="[1.5,2)",io.swa
+ gger.models.refs;version="[1.5,2)",javax.xml.bind.annotation,org.slf4
+ j;version="[1.7,2)"
+mode: development
+package: io.swagger
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.7))"
+Tool: Bnd-3.3.0.201609221906
+url: https://github.com/swagger-api/swagger-core/modules/swagger-model
+ s

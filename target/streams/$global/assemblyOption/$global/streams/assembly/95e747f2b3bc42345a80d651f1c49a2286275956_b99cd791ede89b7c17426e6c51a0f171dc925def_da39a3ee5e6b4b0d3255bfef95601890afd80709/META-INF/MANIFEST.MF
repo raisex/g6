@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1444173312147
+Build-Jdk: 1.7.0_79
+Built-By: alex
+Bundle-Description: Weupnp is a lightweight Java library, released under
+  the LGPL licence, designed to implement the UPnP protocol to handle po
+ rt mappings on Gateway Devices.
+Bundle-ManifestVersion: 2
+Bundle-Name: weupnp
+Bundle-SymbolicName: org.bitlet.weupnp
+Bundle-Version: 0.1.4
+Created-By: Apache Maven Bundle Plugin
+Export-Package: org.bitlet.weupnp;version="0.1.4";uses:="javax.xml.parse
+ rs,org.xml.sax,org.xml.sax.helpers"
+Implementation-Title: weupnp
+Implementation-Vendor-Id: org.bitlet
+Implementation-Version: 0.1.4
+Import-Package: javax.xml.parsers,org.xml.sax,org.xml.sax.helpers
+Main-Class: org.bitlet.weupnp.Main
+Package: org.bitlet.weupnp
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.5))"
+Specification-Title: weupnp
+Specification-Version: 0.1.4
+Tool: Bnd-2.4.1.201501161923

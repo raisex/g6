@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Implementation-Title: swagger-akka-http
+Implementation-Version: 1.0.0
+Specification-Vendor: com.github.swagger-akka-http
+Specification-Title: swagger-akka-http
+Implementation-Vendor-Id: com.github.swagger-akka-http
+Specification-Version: 1.0.0
+Implementation-URL: https://github.com/swagger-akka-http/swagger-akka-
+ http
+Vcs-Release-Tag: v1.0.0
+Implementation-Vendor: com.github.swagger-akka-http
+Vcs-Release-Hash: c3b8fc62e826faf2e6235691e850bb2968784209
+

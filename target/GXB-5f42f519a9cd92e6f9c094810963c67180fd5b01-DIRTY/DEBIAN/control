@@ -1,0 +1,11 @@
+Source: FLG
+Package: FLG
+Version: 5f42f519a9cd92e6f9c094810963c67180fd5b01-DIRTY
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 81771
+Depends: java8-runtime-headless
+Maintainer: blackturtle.eu
+Description: FLG node
+ FLG node

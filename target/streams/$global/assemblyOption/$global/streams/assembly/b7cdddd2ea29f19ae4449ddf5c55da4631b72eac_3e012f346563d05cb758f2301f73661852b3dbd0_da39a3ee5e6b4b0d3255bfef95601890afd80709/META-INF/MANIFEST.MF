@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: kamon-influxdb
+Implementation-Version: 1.0.2
+Specification-Vendor: io.kamon
+Specification-Title: kamon-influxdb
+Implementation-Vendor-Id: io.kamon
+Specification-Version: 1.0.2
+Vcs-Release-Tag: v1.0.2
+Implementation-Vendor: io.kamon
+Vcs-Release-Hash: 0cff47ed20680ccf27bf8e971d0ff828445fa118
+

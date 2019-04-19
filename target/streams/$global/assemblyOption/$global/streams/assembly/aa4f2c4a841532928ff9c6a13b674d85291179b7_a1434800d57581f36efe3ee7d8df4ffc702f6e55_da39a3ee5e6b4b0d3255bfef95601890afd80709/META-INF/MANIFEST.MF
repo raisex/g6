@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: kamon-akka-25
+Implementation-Version: 1.1.1
+Specification-Vendor: io.kamon
+Specification-Title: kamon-akka-25
+Implementation-Vendor-Id: io.kamon
+Specification-Version: 1.1.1
+Implementation-Vendor: io.kamon
+

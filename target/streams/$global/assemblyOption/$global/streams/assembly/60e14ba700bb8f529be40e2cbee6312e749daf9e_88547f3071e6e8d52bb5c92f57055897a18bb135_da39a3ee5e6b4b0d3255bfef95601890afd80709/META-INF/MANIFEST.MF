@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: retrofit2.converter.moshi
+Archiver-Version: Plexus Archiver
+Built-By: jw
+Created-By: Apache Maven 3.5.3
+Build-Jdk: 1.8.0_131
+
